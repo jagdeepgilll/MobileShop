@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MobileShop.Models.Configration>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="text-align:center;">Configration</h1>
+<!-- change link to button-->
+<p>
+    <a asp-action="Create" class="btn tm-btn-secondary">Create New</a>
+</p>
+<table class="table" style="position:center; padding-left:60px; padding-right:60px;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Storage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RAM)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Storage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RAM)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn tm-btn-secondary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn tm-btn-secondary">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn tm-btn-secondary">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

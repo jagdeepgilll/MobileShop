@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MobileShop.Models.Repair>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="text-align:center; font-family:'Comic Sans MS';">Repair</h1>
+<!-- change link to button-->
+<p>
+    <a asp-action="Create" class="btn tm-btn-secondary;">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfigrationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DefectInPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsRepairable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepairDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ConfigrationId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DefectInPhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsRepairable)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RepairDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn tm-btn-secondary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn tm-btn-secondary">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn tm-btn-primary">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

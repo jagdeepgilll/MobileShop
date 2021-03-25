@@ -1,0 +1,71 @@
+﻿    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - MobileShop</title>
+        <link rel="stylesheet" href="~/layout/styles/framework.css" />
+        <link rel=" stylesheet" href="~/layout/styles/layout.css" />
+        <link rel="stylesheet" href="~/layout/styles/fontawesome-free/css/fontawesome-all.min.css" />
+        <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body style="font-family:'Comic Sans MS';">
+        <div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
+            <!-- ################################################################################################ -->
+            <div class="wrapper row0">
+                <div id="topbar" class="hoc clear">
+                    <div class="fl_right">
+                        <ul class="nospace" style="font-size:larger;font-family:'Comic Sans MS';">
+                            <li> <partial name="_LoginPartial" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper row1">
+                <header id="header" class="hoc clear">
+                    <div id="logo" class="fl_left">
+                        <!-- ################################################################################################ -->
+                        @*<h1><a href="index.html">Jagdeep Mobile Shop</a></h1>*@
+                        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="font-size:xx-large;font-family:'Comic Sans MS';">Jagdeep Mobile Shop</a>
+                        @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+
+        </button>*@
+                        <!-- ################################################################################################ -->
+                    </div>
+                    <nav id="mainav" class="fl_right">
+                        <!-- adding  navigation-->
+                        <!-- ################################################################################################ -->
+                        <ul class="clear" style="font-size:larger;font-family:'Comic Sans MS';">
+                          
+                            <li><a href="Phones">Phone</a></li>
+                            <li><a href="Configrations">Phone Configration</a></li>
+                            <li><a href="Repairs">Phone Repair Detail</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+            <!-- ################################################################################################ -->
+           </div>
+            <div class="container">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        <!-- changing text-align in footer-->
+            <footer class="border-top footer text-muted" style="text-align:center; padding-top:10px; font-size:x-large
+    
+    
+    
+    ">
+                <div class="container">
+                    &copy; 2021 - Jagdeep MobileShop - developed by Jagdeep Gill
+                </div>
+            </footer>
+            <script src="~/layout/scripts/jquery.backtotop.js"></script>
+            <script src="~/layout/scripts/jquery.min.js"></script>
+            <script src="~/layout/scripts/jquery.mobilemenu.js" asp-append-version="true"></script>
+            @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+    </html>

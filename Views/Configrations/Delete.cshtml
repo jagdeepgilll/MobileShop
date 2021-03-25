@@ -1,0 +1,46 @@
+﻿@model MobileShop.Models.Configration
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<!--Text-align center to h1 & h4-->
+<h1 style="text-align:center;">Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4 style="text-align:center;">Configration</h4>
+    <hr />
+    <dl class="row" style="background-color:lightcyan; padding-left:300px; padding-right:300px; ">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PhoneId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Storage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Storage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RAM)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RAM)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+
+    
+</div>

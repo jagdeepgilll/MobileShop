@@ -1,0 +1,42 @@
+﻿@model MobileShop.Models.Phone
+
+@{
+    ViewData["Title"] = "Details";
+}
+<!--Text-align center to h1 & h4-->
+<h1 style="text-align:center;">Details</h1>
+
+<div>
+    <h4 style="text-align:center;">Phone</h4>
+    <hr />
+    <dl class="row" style="background-color:lightcyan; padding-left:300px; padding-right:300px; ">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NameOfPhone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NameOfPhone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Company)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PhoneId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
